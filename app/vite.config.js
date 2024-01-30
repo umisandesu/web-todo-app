@@ -11,11 +11,12 @@ export default defineConfig({
             refresh: true,
         }),
     ],
+    // ここから追加
     server: {
         host: '0.0.0.0',
         hmr: {
             host: 'localhost',
         },
     },
-
+    // ここまで追加
 });
