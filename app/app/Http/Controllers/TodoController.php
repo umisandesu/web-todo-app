@@ -25,12 +25,12 @@ class TodoController extends Controller
         // DoneのTodoを表示するかどうか(Getパラメーターで判定)
         if ($request->has('done')) {
             // DoneのTodoを作成日順で表示する
-            $todos = TodoItem::where(['user_id' => Auth::id(), 'is_done' => true])
+            $todos = TodoItem::where(['' => Auth::id(), 'is_done' => true])
                 ->orderBy('created_at', 'desc')
                 ->get();
         } else {
             // UndoneのTodoを作成日順で表示する
-            $todos = TodoItem::where(['user_id' => Auth::id(), 'is_done' => false])
+            $todos = TodoItem::where(['' => Auth::id(), 'is_done' => false])
                 ->orderBy('created_at', 'desc')
                 ->get();
         }
@@ -61,10 +61,10 @@ class TodoController extends Controller
 
         // Todoを作成する
         //  DB上ではis_doneはデフォルトでfalseだが、明示的にfalseを指定する
-        //  user_idは、Auth::id()でログインしているユーザーのIDを取得できる
+        //  は、Auth::id()でログインしているユーザーのIDを取得できる
         TodoItem::create(
             [
-                'user_id' => Auth::id(),
+                '' => Auth::id(),
                 'title' => $request->title,
                 'is_done' => false,
             ]

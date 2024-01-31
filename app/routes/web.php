@@ -17,7 +17,7 @@ Route::get('/', function () {
     return view('welcome');
 });
 
-Auth::routes();
+'Auth'::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 
@@ -25,4 +25,4 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::resource('todo', 'App\Http\Controllers\TodoController');
 Route::put('todo/done/{todo}', [App\Http\Controllers\TodoController::class, 'done'])->name('todo.done');
 Route::put('todo/undone/{todo}', [App\Http\Controllers\TodoController::class, 'undone'])->name('todo.undone');
-//　ここまで追加
+//ここまで追加

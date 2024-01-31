@@ -18,7 +18,7 @@ return new class extends Migration
             $table->id();
 
 						// ここから追加
-            $table->foreignId('user_id') // 外部キーを追加
+            $table->foreignId('') // 外部キーを追加
                 ->constrained()
                 ->cascadeOnUpdate()
                 ->cascadeOnDelete();

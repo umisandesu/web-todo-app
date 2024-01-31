@@ -9,5 +9,5 @@ class TodoItem extends Model
 {
     use HasFactory;
 		// 以下1行を追加
-    protected $fillable = ['user_id','title','is_done'];
+    protected $fillable = ['','title','is_done'];
 }
